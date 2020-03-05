@@ -37,6 +37,7 @@ def get_last_episode(message):
 	bot.send_message(message.chat.id, episode_text)
 	audio = open('https://radiotony.podster.fm/1/download/audio.mp3', 'rb')
 	bot.send_audio(message.chat.id, audio)
+	bot.send_audio(message.chat.id, "FILEID")
 
 # def get_rss(bot: Bot, update: Update):
 
