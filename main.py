@@ -35,7 +35,7 @@ def get_last_episode(message):
 	episode_text = text = "{}\n\n{}\n\n{}".format(title,description,mp3_url)
 
 	bot.send_message(message.chat.id, episode_text)
-	audio = open('https://radiotony.podster.fm/1/download/audio.mp3', 'rb')
+	audio = open('https://radiotony.podster.fm/1/download/audio.mp3', 'r')
 	bot.send_audio(message.chat.id, audio)
 	bot.send_audio(message.chat.id, "FILEID")
 
