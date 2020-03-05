@@ -35,34 +35,8 @@ def get_last_episode(message):
 	episode_text = text = "{}\n\n{}\n\n{}".format(title,description,mp3_url)
 
 	bot.send_message(message.chat.id, episode_text)
-	audio = open('https://radiotony.podster.fm/1/download/audio.mp3', 'r')
-	bot.send_audio(message.chat.id, audio)
-	bot.send_audio(message.chat.id, "FILEID")
-
-# def get_rss(bot: Bot, update: Update):
-
-
-# 	bot.send_audio(
-# 		chat_id=update.message.chat_id,
-# 		audio=open(mp3_url_2, 'rb')
-# 	)
-
-# def main():
-# 	bot = Bot(
-# 		token=TG_TOKEN,
-# 		base_url=TG_API_URL,
-# 	)
-# 	updater = Updater(
-# 		bot=bot,	
-# 	)
-
-# 	start_handler = CommandHandler("start", do_start)
-# 	message_handler = MessageHandler(Filters.text, get_rss)
-	
-# 	updater.dispatcher.add_handler(start_handler)
-# 	updater.dispatcher.add_handler(message_handler)
-
-# 	updater.start_polling()
-# 	updater.idle()
+#	audio = open('https://radiotony.podster.fm/1/download/audio.mp3', 'r')
+#	bot.send_audio(message.chat.id, audio)
+#	bot.send_audio(message.chat.id, "FILEID")
 
 bot.polling()
