@@ -2,7 +2,7 @@
 
 import feedparser
 import telebot
-from bs4 import BeautifulSoup
+#from bs4 import BeautifulSoup
 from config import TG_TOKEN
 
 token = TG_TOKEN
