@@ -24,10 +24,12 @@ def get_last_episode(message):
 	mp3_url_2 = "{}/download/audio.mp3".format(mp3_url)
 	description = entry.content[0].value
 	episode_text = text = "{}\n\n{}\n\n{}".format(title,description,mp3_url)
-
+try:
 	bot.send_message(message.chat.id, episode_text)
 	audio = open(mp3_url_2, 'rb')
 	bot.send_audio(message.chat.id, audio)
 	bot.send_audio(message.chat.id, "FILEID")
+except Exception as e:
+        bot.reply_to(message, 'oooops')
 
 bot.polling()
