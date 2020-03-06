@@ -30,6 +30,6 @@ try:
 	bot.send_audio(message.chat.id, audio)
 	bot.send_audio(message.chat.id, "FILEID")
 except Exception as e:
-        bot.reply_to(message, 'oooops')
+        bot.send_message(message.chat.id, mp3_url_2 + ' - Ссылка на скачивание')
 
 bot.polling()
