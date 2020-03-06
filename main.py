@@ -2,21 +2,10 @@
 
 import feedparser
 import telebot
-# from telegram import Bot
-# from telegram import Update
-# from telegram.ext import CommandHandler
-# from telegram.ext import Filters
-# from telegram.ext import MessageHandler
-# from telegram.ext import Updater
-
-# from bs4 import BeautifulSoup
-
-from config import TG_API_URL
+from bs4 import BeautifulSoup
 from config import TG_TOKEN
 
 token = TG_TOKEN
-base_url = TG_API_URL
-
 bot = telebot.TeleBot(token)
 
 @bot.message_handler(commands=['start','help'])
@@ -37,8 +26,8 @@ def get_last_episode(message):
 	episode_text = text = "{}\n\n{}\n\n{}".format(title,description,mp3_url)
 
 	bot.send_message(message.chat.id, episode_text)
-#	audio = open('https://radiotony.podster.fm/1/download/audio.mp3', 'r')
-#	bot.send_audio(message.chat.id, audio)
-#	bot.send_audio(message.chat.id, "FILEID")
+	audio = open(mp3_url_2, 'rb')
+	bot.send_audio(message.chat.id, audio)
+	bot.send_audio(message.chat.id, "FILEID")
 
 bot.polling()
