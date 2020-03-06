@@ -1,1 +1,1 @@
-heroku ps:scale bot=1
+worker: python main.py $PORT
