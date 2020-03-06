@@ -26,7 +26,7 @@ def get_last_episode(message):
 	episode_text = text = "{}\n\n{}\n\n{}".format(title,description,mp3_url)
 	bot.send_message(message.chat.id, episode_text)
 	try:
-		audio = open('http://radiotony.ru/wp-content/uploads/2020/03/z_uk-peremotki-2.mp3', 'rb')
+		audio = open('/tmp/audio.mp3', 'rb')
 		bot.send_audio(message.chat.id, audio)
 		bot.send_audio(message.chat.id, "FILEID")
 	except Exception as e:
