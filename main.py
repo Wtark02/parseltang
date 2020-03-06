@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import feedparser
 import telebot
 # from telegram import Bot
