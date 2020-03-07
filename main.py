@@ -21,8 +21,11 @@ def get_last_episode(message):
 	entry = parser.entries[0]
 	title = entry.title
 	mp3_url = entry.links[0].href
-	mp3_url_2 = "{}/download/audio.mp3".format(mp3_url)
+	mp3_url_2 = entry.enclosures[0].href
 	description = entry.content[0].value
+	description = description.replace("<p>","")
+	description = description.replace("</p>","")
+	description = description.replace("<br>","")
 	episode_text = text = "{}\n\n{}\n\n{}".format(title,description,mp3_url)
 	bot.send_message(message.chat.id, episode_text)
 	try:
