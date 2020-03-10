@@ -18,6 +18,13 @@ def get_last_episode(message):
 	rss_url = text.replace("/rss ","")
 	parser = feedparser.parse(rss_url)
 
+	with open("source.txt", "w") as file:
+    file.write("{} {} \n".format(message.chat.id,rss_url))
+
+	with open(r"source.txt", "r") as file:
+    for line in file:
+        print(line)
+
 	entry = parser.entries[0]
 	title = entry.title
 	mp3_url = entry.links[0].href
