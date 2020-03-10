@@ -21,7 +21,7 @@ def wtf(message):
 	file.write(string)
 	file.close()
 
-def get_last_episode:
+def get_last_episode():
 	with open(r"source.txt", "r") as file:
     for line in file:
         print(line)
