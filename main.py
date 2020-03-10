@@ -13,14 +13,19 @@ def start_message(message):
     bot.send_message(message.chat.id, 'Привет! Я (в будущем) бот для автопарсинга новых выпусков\n\nПришли мне сообщение вида /rss "адрес RSS"')
 
 @bot.message_handler(commands=['rss'])
-def get_last_episode(message):
+def wtf(message):
 	text = message.text
 	rss_url = text.replace("/rss ","")
-	parser = feedparser.parse(rss_url)
 	string = "{} {}\n".format(message.chat.id,rss_url)
 	file = open("source.txt", "w")
 	file.write(string)
 	file.close()
+
+def get_last_episode:
+	with open(r"source.txt", "r") as file:
+    for line in file:
+        print(line)
+	parser = feedparser.parse(rss_url)
 	entry = parser.entries[0]
 	title = entry.title
 	mp3_url = entry.links[0].href
@@ -35,6 +40,5 @@ def get_last_episode(message):
 	btn_my_site = types.InlineKeyboardButton(text='Слушать выпуск', url=mp3_url_2)
 	markup.add(btn_my_site)
 	bot.send_message(message.chat.id, "Нажми на кнопку, чтобы послушать новый выпуск", reply_markup = markup)
-
 	    
 bot.polling()
