@@ -2,6 +2,7 @@
 
 import feedparser
 import telebot
+from telebot import types
 from config import TG_TOKEN
 
 token = TG_TOKEN
@@ -28,7 +29,7 @@ def get_last_episode(message):
 	episode_text = text = "{}\n\n{}\n\n{}".format(title,description,mp3_url)
 	bot.send_message(message.chat.id, episode_text)
 	markup = types.InlineKeyboardMarkup()
-	btn_my_site= types.InlineKeyboardButton(text='Слушать выпуск', url=mp3_url_2)
+	btn_my_site = types.InlineKeyboardButton(text='Слушать выпуск', url=mp3_url_2)
 	markup.add(btn_my_site)
 	bot.send_message(message.chat.id, "Нажми на кнопку, чтобы послушать новый выпуск", reply_markup = markup)
 
