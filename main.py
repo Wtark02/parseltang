@@ -6,7 +6,7 @@ import telebot
 from config import TG_TOKEN
 
 token = TG_TOKEN
-bot = telebot.TeleBot('1137799389:AAGF_kLE4v0jUATJPAtlcXLR-6F0P_naZo8')
+bot = telebot.TeleBot(token)
 
 @bot.message_handler(commands=['start','help'])
 def start_message(message):
