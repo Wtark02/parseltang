@@ -22,9 +22,8 @@ def wtf(message):
 	file.close()
 
 def get_last_episode():
-	with open(r"source.txt", "r") as file:
-    	for line in file:
-        	print(line)
+	file = open(r"source.txt", "r")
+    print(*file)
 	parser = feedparser.parse(rss_url)
 	entry = parser.entries[0]
 	title = entry.title
