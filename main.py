@@ -18,7 +18,7 @@ def get_last_episode(message):
 	rss_url = text.replace("/rss ","")
 	parser = feedparser.parse(rss_url)
 	file = open("source.txt", "w")
-	file.write(message.chat.id + ' ' + rss_url + '\n')
+	file.write(message.chat.id +" "+ rss_url +"\n")
 	file.close()
 	entry = parser.entries[0]
 	title = entry.title
