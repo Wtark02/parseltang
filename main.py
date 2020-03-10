@@ -33,11 +33,9 @@ def get_last_episode(message):
 		bot.send_audio(message.chat.id, audio)
 		bot.send_audio(message.chat.id, "FILEID")
 	except Exception as e:
-        	@bot.message_handler(commands = ['url'])
-		def url(message):
-		    markup = types.InlineKeyboardMarkup()
-		    btn_my_site= types.InlineKeyboardButton(text='Слушать выпуск', url=mp3_url_2)
-		    markup.add(btn_my_site)
-		    bot.send_message(message.chat.id, "Нажми на кнопку, чтобы послушать новый выпуск", reply_markup = markup)
+	    markup = types.InlineKeyboardMarkup()
+	    btn_my_site= types.InlineKeyboardButton(text='Слушать выпуск', url=mp3_url_2)
+	    markup.add(btn_my_site)
+	    bot.send_message(message.chat.id, "Нажми на кнопку, чтобы послушать новый выпуск", reply_markup = markup)
 
 bot.polling()
